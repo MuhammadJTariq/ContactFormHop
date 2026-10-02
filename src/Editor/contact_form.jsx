@@ -1,11 +1,33 @@
-// import components, styles
+import {formCanvas} from '../components/Sidebar/fields';
 
-export default function ContactEditor(){
-    return ( 
-        <div className="contact-form-editor">
-            This is the main page for the Contact Form Editor, 
-            We are going to modify and Import Components to make them work over here
+function contactEditor(){
 
-        </div>
-    )
+    const [fields, setFields] = useState([]);
+
+    function addfield(type){
+        const field = {
+            id : crypto.randomUUID(),
+            type : type, 
+            label : type, 
+            required : false,
+        }
+
+        setFields((currentFields) => [
+            ...currentFields,
+            field
+        ]);
+
+
+
+        return (
+            <div className='contact-form-builder'>
+                <formCanvas fields={fields} />
+                Hello from the Form Creator
+
+            </div>
+        )
+    }
 }
+
+
+export default contactEditor;

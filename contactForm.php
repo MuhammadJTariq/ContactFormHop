@@ -19,7 +19,7 @@ define('CONTACT_FORM_URL', plugin_dir_url(__FILE__));
 define('ERROR_LOG', CONTACT_FORM_PATH . '/logs/error_log.php' );
 
 
-/*
+
 function log_error($value){
     if(file_exists(ERROR_LOG)){
         file_put_contents(ERROR_LOG, $value, FILE_APPEND, JSON_PRETTY_PRINT);
@@ -28,7 +28,7 @@ function log_error($value){
     return;
 }
 
-*/
+
 
 // Add option for Recaptcha Integration 
 // you can integrate other types of forms as well
