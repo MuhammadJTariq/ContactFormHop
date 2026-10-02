@@ -33,7 +33,7 @@ function my_plugin_admin_menu() {
 function contact_form_admin_page() {
     ?>
     <div class="wrap">
-        <div id="my-plugin-root"></div>
+        <div id="contact-form-root" data-page="dashboard_admin"></div>
     </div>
     <?php
 }

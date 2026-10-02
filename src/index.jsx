@@ -1,48 +1,19 @@
 import { createRoot } from '@wordpress/element';
 import './style.css';
+import ContactEditor from './Editor/contact_form';
 
-function App() {
-    return (
-        <div className="my-plugin">
 
-            <header className="my-plugin-header">
-                <h1>My Plugin</h1>
-                <p>Configure your plugin.</p>
-            </header>
-
-            <main className="my-plugin-content">
-
-                <section className="settings-card">
-                    <h2>General Settings</h2>
-
-                    <label>
-                        Plugin Name
-                    </label>
-
-                    <input
-                        type="text"
-                        placeholder="My Plugin"
-                    />
-
-                    <label>
-                        Enable Plugin
-                    </label>
-
-                    <input type="checkbox" />
-
-                    <button className="save-button">
-                        Save Settings
-                    </button>
-                </section>
-
-            </main>
-
-        </div>
-    );
-}
-
-const root = document.getElementById('my-plugin-root');
+const root = document.getElementById('contact-form-root');
 
 if (root) {
-    createRoot(root).render(<App />);
+    const page = root.dataset.page;
+    let component;
+    if(page === 'editor'){
+        component = <ContactEditor />;
+    }
+
+
+    if(component){
+        createRoot(root).render(component);
+    }
 }
